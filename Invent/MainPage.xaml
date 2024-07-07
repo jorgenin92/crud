@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Invent.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <!--<Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight" />-->
+
+            <!--<Label
+                Text="Hello, World!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />-->
+
+            <Label
+                Text="Inventario V1"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Invent" />
+
+            <Button Clicked="OnAddInventClicked" 
+                    x:Name="AddInventBtn"
+                    Text="Add Invent"
+                    HorizontalOptions="Fill"/>
+            
+            <Button Clicked="OnUpdateInventClicked" 
+                    x:Name="UpdateInventBtn"
+                    Text="Update Invent"
+                    HorizontalOptions="Fill"/>
+            <Button Clicked="OnDeleteInventClicked" 
+                    x:Name="DeleteInventBtn"
+                    Text="Delete Invent"
+                    HorizontalOptions="Fill"/>
+
+            <CollectionView x:Name="collectionView" SelectionMode="Single" ItemsSource="{Binding Items}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" ColumnSpacing="12">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <Label Grid.Column="0"
+                               Text="{Binding id_prod}"
+                               FontAttributes="Bold" />
+                            <Label Grid.Column="1"
+                               Text="{Binding plu}"
+                               FontAttributes="Bold" />
+                            <Label Grid.Column="2"
+                               Text="{Binding descripcion}"
+                               FontAttributes="Bold" />
+                            
+                            <Label Grid.Row="1"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="CenterAndExpand" 
+                               Grid.ColumnSpan="3"
+                               Text="{Binding id_mcodbarra}" />
+                            
+                            <Label Grid.Row="2"
+                               Grid.Column="0"
+                               Text="{Binding cantidad}"
+                               VerticalOptions="End" />
+                            <Label Grid.Row="2"
+                               Grid.Column="1"
+                               Text="{Binding monto}"
+                               VerticalOptions="End" />
+                            <Label Grid.Row="2"
+                               Grid.Column="2"
+                               Text="{Binding total}"
+                               VerticalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

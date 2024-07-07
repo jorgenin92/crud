@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Invent.InventDetails"
+             Title="Detalles inventario"
+             xmlns:models="clr-namespace:Invent.Model"
+             x:DataType="models:Inventario">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="10"
+                             VerticalOptions="StartAndExpand">
+            <Label Text="Id" />
+            <Entry Text="{Binding id_prod}" Keyboard="Numeric" />
+            <Label Text="Código barras" />
+            <Entry Text="{Binding id_mcodbarra}" />
+            <Label Text="Plu" />
+            <Entry Text="{Binding plu}" />
+            <Label Text="Descripción" />
+            <Entry Text="{Binding descripcion}" />
+            <Label Text="Boleta" />
+            <Entry Text="{Binding boleta}" Keyboard="Numeric" />
+            <Label Text="Ubicación" />
+            <Entry Text="{Binding ubicacion}" />
+            <Label Text="Cantidad" />
+            <Entry Text="{Binding cantidad}" Keyboard="Numeric" />
+            <Label Text="Valor" />
+            <Entry Text="{Binding valor}" Keyboard="Numeric" />
+            <Label Text="Total" />
+            <Entry Text="{Binding total}" Keyboard="Numeric" />
+            <Label Text="Valor imp." />
+            <Entry Text="{Binding valor_imp}" Keyboard="Numeric" />
+            <Label Text="Total imp." />
+            <Entry Text="{Binding total_imp}" Keyboard="Numeric" />
+            <Label Text="Total" />
+            <DatePicker Date="{Binding fecha}" />
+            <Label Text="Numeración" />
+            <Entry Text="{Binding numeracion}" Keyboard="Numeric" />
+
+            <Button Text="Guardar"
+                    Clicked="OnSaveClicked" />
+            <Button Text="Cancelar"
+                    Clicked="OnCancelClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
