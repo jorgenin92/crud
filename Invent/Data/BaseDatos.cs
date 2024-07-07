@@ -156,7 +156,7 @@ namespace Invent.Data
         {
             bool ret;
             string sql = "DELETE FROM [inventario] " +
-                     "WHERE id_unico = id_unico";
+                     "WHERE id_unico = @id_unico";
 
             using (SqlConnection con = new SqlConnection(GetCadenaConexion()))
             {

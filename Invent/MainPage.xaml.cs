@@ -37,7 +37,7 @@ namespace Invent
         private void OnAddInventClicked(object sender, EventArgs e)
         {
             Inventario product = new Inventario();
-
+            /*
             if (collectionView.SelectedItem is not null)
             {
                 var invent = collectionView.SelectedItem as Inventario;
@@ -46,7 +46,7 @@ namespace Invent
                     product = invent as Inventario;
                 }
             }
-
+            */
             var navigationParams = new Dictionary<string, object>
             {
                 { "Item", product }
@@ -71,6 +71,7 @@ namespace Invent
             };
             Shell.Current.GoToAsync("InventDetails", navigationParams);
             GetInventDB();
+            collectionView.SelectedItem = null;
         }
 
         private void OnDeleteInventClicked(object sender, EventArgs e)
